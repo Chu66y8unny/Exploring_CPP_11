@@ -6,6 +6,7 @@ This is my study notes of `Exploring C++ 11`.
 
 -  <http://cpphelp.com>
 -  <http://www.apress.com/9781430261933>
+-  <https://github.com/Apress/exploring-c-11>
 
 Visual Studio includes a number of **doodads**, **froufrous**, and **whatnots** that are unimportant for your core task of learning C++.
 
@@ -131,3 +132,30 @@ std::cout << setfill('-') << width(10) << ""; // print 10 '-'
 ```
 
 # 09 Arrays and Vectors
+
+Those of you who suffered through a college algorithms course may remember how to write a bubble sort or quick sort, but why should you need to **muck about with** such low-level code?
+
+# 10 Algorithms and Iterators
+
+Most of the standard algorithms are declared in the `<algorithm>` header, although the `<numeric>` header contains a few that are numerically oriented.
+
+The standard algorithms run the **gamut** of common programming activities: sorting, searching, copying, comparing, modifying, and more.
+
+`assert` from `<cassert>` needs no `std::`.
+
+*for-each* loop defines a hidden iterator that traverses all the elements. Each time through the loop, the iterator is dereferenced.
+
+```C++
+for (int element : data)
+    std::cout << element << '\n';
+
+#include <iterator>
+
+std::istream_iterator<int> iit(std::cin);
+std::istream_iterator<int> iit_end();
+std::back_inserter(data);
+// returns a back inserter iterator which call data.push_back any time assigned a value
+std::ostream_iterator<int> oit(std::cout, "\n");
+```
+
+`list1003.cpp` is worth reading.
