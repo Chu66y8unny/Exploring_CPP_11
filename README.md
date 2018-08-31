@@ -159,3 +159,51 @@ std::ostream_iterator<int> oit(std::cout, "\n");
 ```
 
 `list1003.cpp` is worth reading.
+
+# 11 Increment and Decrement
+
+`list1103.cpp`, `list1104.cpp`, `list1105.cpp` are worth reading.
+
+```C++
+std::iter_swap
+```
+
+# 12 Conditions and Logic
+
+```C++
+#include <ios>
+
+bool a{true}, b{false};
+std::cin >> std::boolalpha >> a >> std::noboolalpha >> b;
+std::cout << std::boolalpha << a << std::noboolalpha << b;
+```
+
+By default, when an input stream has to read a `bool` value, it actually reads an integer, and if the integer's value is `1`, the stream interprets that as `true`. The value `0` is `false`, and any other value results in an error.
+With the `std::boolalpha` manipulator, the input stream requires the exact text `true` or `false`. Integers are not allowed, nor are any case differences. The input stream accepts only those exact words.
+Use the `std::noboolalpha` manipulator to revert to the default numeric Boolean values.
+
+C++ knows how to convert a stream object (such as `std::cin`) to `bool`. Every I/O stream keeps track of its internal state, and if any operation fails, the stream remembers that fact. When you convert a stream to `bool`, if the stream is in a failure state, the result is `false`.
+
+C++ offers the usual logical operators: `and`, `or`, and `not` (which are reserved keywords).
+
+I was **hesitant** about even mentioning the symbolic operators, but I can’t ignore them. This is your chance to become a **trendsetter**. **Eschew** the old-fashioned, harder-to-read, harder-to-understand, error-prone symbols and embrace the keywords.
+
+# 13 Compound Statements
+
+```C++
+std::lower_bound(first, last, value);
+// returns the first iterator whose value >= the given value
+std::vector<int> data{};
+iter = data.erase(iter);
+// returns the iterator pointing to the new value after the erase
+data.insert(iter, value);
+// inserts the value before the iterator
+```
+
+`list1302.cpp` is worth reading.
+
+# 14 Introduction to File I/O
+
+Basic I/O is not difficult, but it can quickly become a **morass** of **gooey**, complicated code when you start to throw in sophisticated error-handling, international issues, binary I/O, and so on.
+
+# 15 The Map Data Structure
